@@ -1,0 +1,82 @@
+
+<h1>Prima pagina:  {{title}}</h1>
+<mat-form-field>
+  <mat-label>Title:</mat-label>
+  <input matInput [(ngModel)] = "title">
+</mat-form-field>
+<p>Clicca</p>
+<div class="example-button-container">
+  <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" (click) = clickbutton()>
+    <mat-icon>plus_one</mat-icon>
+  </button>
+</div>
+
+
+
+
+  <p>
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Aggiunta persona </span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
+  </p>
+  
+
+ <app-test></app-test>
+
+<hr>
+<h2>Agiunta di una nuova Persona</h2>
+<!-- <label>Name: </label>
+  <input type="text" [(ngModel)] = "newPerson.name"><br>
+  <label>Surname:</label>
+  <input type="text" [(ngModel)] = "newPerson.surname"><br>
+  <label>Age:</label>
+  <input type="text" [(ngModel)] = "newPerson.age"><br>
+  <button (click) = addPerson()>ok</button> -->
+
+  <mat-form-field>
+    <mat-label>Name:</mat-label>
+    <input matInput [(ngModel)] = "newPerson.name">
+  </mat-form-field>
+<hr>
+  <mat-form-field>
+    <mat-label>Surname:</mat-label>
+    <input matInput [(ngModel)] = "newPerson.surname">
+  </mat-form-field>
+<hr>
+<mat-form-field>
+  <mat-label>Age:</mat-label>
+  <input matInput [(ngModel)] = "newPerson.age">
+</mat-form-field>
+  
+    <div class="example-button-row">
+      
+      <button mat-raised-button color="primary" (click) = addPerson()>OK</button>
+      
+    </div>
+  
+<hr>
+
+<div *ngFor="let person of persone; let i = index" > 
+  <hr>
+  <p>{{person.name}}</p>
+  <p>{{person.surname}}</p>
+  <p>{{person.age}}</p>
+  <button mat-raised-button color="warn" (click) = 'deletePerson(i)'>DELETE</button>
+  <button mat-raised-button color="accent" (click) = 'modifyElementName(i)'>MODIFY</button>
+
+</div>
+
+
+
+
+ 
